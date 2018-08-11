@@ -2,7 +2,7 @@
 let friendsArray = [
   {
     "name":"Nigel",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://media.licdn.com/dms/image/C4E03AQFX906Qf6HgDA/profile-displayphoto-shrink_800_800/0?e=1539216000&v=beta&t=QC5Cpn0Ke23WyNbzYCTtKOQGq5CDXjmAzMcO8mnvwog",
     "scores":[
         5,
         1,
@@ -18,7 +18,7 @@ let friendsArray = [
   },
   {
     "name":"Enrique",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://avatars0.githubusercontent.com/u/36285603?s=460&v=4",
     "scores":[
         1,
         3,
@@ -34,7 +34,7 @@ let friendsArray = [
   },
   {
     "name":"Nick",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://avatars0.githubusercontent.com/u/8369195?s=460&v=4",
     "scores":[
         5,
         5,
@@ -50,7 +50,7 @@ let friendsArray = [
   },
   {
     "name":"Phil",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://avatars3.githubusercontent.com/u/30608815?s=460&v=4",
     "scores":[
         5,
         3,
