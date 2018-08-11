@@ -1,21 +1,19 @@
+// dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("express-path");
 
-// tells node to create an "express" server
-let app = express();
+const app = express();
+const PORT = process.env.PORT || 8080;
 
-// sets an initial port for the listener
-let PORT = process.env.PORT || 8080;
-
-// sets up the Express app to handle data parsing
+// sets up Express to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// routes for server "map" of how to respond when users visit or request data from various URLs
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+// router
+require("./app/routes/apiRoutes")(app);
+require("./app/routes/htmlRoutes")(app);
 
+// listener
 app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
+    console.log("App is listening on " + PORT);
 });

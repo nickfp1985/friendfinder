@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = function(app) {
-    //HTML GET REQUESTS
+    // html get requests
     app.get("/survey", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/survey.html"));
       });

@@ -1,35 +1,55 @@
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
-// ===============================================================================
-
-let friendData = require("../data/friends");
-// var waitListData = require("../data/waitinglistData");
-
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
+let friendsData = require("../data/friends");
 
 module.exports = function(app) {
-  // API GET Requests
+  
   app.get("/api/friends", function(req, res) {
-    res.json(friendData);
+    res.json(friendsData);
   });
 
   // API POST Requests
-  app.post("/api/friends", function(req, res) {
+  app.post("/api/friends", function (req, res) {
     // server will respond to requests and let users know if they have a match or not
-    for (let i = 0; friendData.length; i++) {
-      if (friendData.scores[i] === newFriend.scores[i]) {
-        
+
+    let friendX = req.body;
+    let numArray = [];
+
+    friendX.scores.forEach(function (score) {
+      numArray.push(score * 1);
+    })
+
+    friendX.scores = numArray;
+
+    let friendDiffs = [];
+
+    friendsData.forEach(function (friend) {
+
+      let totalDiffs = 0;
+
+      for (let i = 0; i < friend.scores.length; i++) {
+          totalDiffs += Math.abs(friend.scores[i] - friendX.scores[i]);
       }
-    }
+
+      friendDiffs.push(totalDiffs);
+    })
+
+    let finalNumber = 100;
+    let finalIndex = 0;
+
+    friendDiffs.forEach(function (number, index) {
+        if (number <= finalNumber) {
+            finalNumber = number;
+            finalIndex = index;
+        }
+    });
+
+    let match = friendsData[finalIndex];
+    friendsData.push(friendX);
+    res.json(match);
+
   });
 
   // ---------------------------------------------------------------------------
-  // clear out the table while working with the functionality
+  // clear out the table
 
   // app.post("/api/clear", function() {
   //   // Empty out the arrays of data
