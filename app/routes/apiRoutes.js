@@ -21,10 +21,11 @@ module.exports = function(app) {
   // API POST Requests
   app.post("/api/friends", function(req, res) {
     // server will respond to requests and let users know if they have a match or not
-    for (let i = 0; friendData.length; i++) {}
+    for (let i = 0; friendData.length; i++) {
       if (friendData.scores[i] === newFriend.scores[i]) {
         
       }
+    }
   });
 
   // ---------------------------------------------------------------------------
